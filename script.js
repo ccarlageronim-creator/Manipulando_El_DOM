@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+//ejemplo de addEventListener para el evento DOMContentLoaded, que se ejecuta cuando el documento HTML ha sido completamente cargado y parseado, sin esperar a que las hojas de estilo, imágenes y subframes terminen de cargarse.
   const currentPage = location.pathname.split('/').pop() || 'index.html';
   let activeLink = null;
 
@@ -6,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const href = link.getAttribute('href');
     const isCurrentPage = href === currentPage;
     link.classList.toggle('active', isCurrentPage);
-
+//usamos un selector para seleccionar todos los elementos con la clase 'nav-link' y luego iteramos sobre ellos. Para cada enlace, obtenemos su atributo 'href' y verificamos si coincide con la página actual. Si es así, agregamos la clase 'active' al enlace; de lo contrario, la eliminamos.
     if (isCurrentPage) {
       link.setAttribute('aria-current', 'page');
       if (link.hasAttribute('target')) {
